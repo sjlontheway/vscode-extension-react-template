@@ -1,0 +1,189 @@
+ftmalloc: warning: ft_usable_size: pointer might not point to a valid heap region: 0x7ffef800e6c0
+(this may still be a valid very large allocation (over 64MiB))
+ftmalloc: warning: (yes, the previous pointer 0x7ffef800e6c0 was valid after all)
+ftmalloc: warning: ft_usable_size: pointer might not point to a valid heap region: 0x7ffef800e6c0
+(this may still be a valid very large allocation (over 64MiB))
+ftmalloc: warning: (yes, the previous pointer 0x7ffef800e6c0 was valid after all)
+[2022-04-12 14:38:22.379] [main] [info] [09:37:14] start at pc: 0x40d71c
+[2022-04-12 14:38:22.379] [main] [info] concurrency [64]
+[2022-04-12 14:38:22.379] [main] [info] qemu cpoint ddr: /home/xuxiali/code/traces/401_1339/kernel_ddr.bin
+[2022-04-12 14:38:22.379] [main] [info] qemu cpoint cpu: /home/xuxiali/code/traces/401_1339/cpu.ini
+[2022-04-12 14:38:22.379] [main] [info] qemu cpoint itraces: /home/xuxiali/code/traces/401_1339/0000001339.bin.gz
+[2022-04-12 14:38:22.382] [timeline] [info] cache queue block is 357MB， sizeof(op_concurrent_queue）= 8320
+ftmalloc: warning: ft_usable_size: pointer might not point to a valid heap region: 0x20020007a00
+(this may still be a valid very large allocation (over 64MiB))
+ftmalloc: warning: (yes, the previous pointer 0x20020007a00 was valid after all)
+ftmalloc: warning: ft_usable_size: pointer might not point to a valid heap region: 0x20020007a00
+(this may still be a valid very large allocation (over 64MiB))
+ftmalloc: warning: (yes, the previous pointer 0x20020007a00 was valid after all)
+ftmalloc: warning: ft_usable_size: pointer might not point to a valid heap region: 0x20036c08780
+(this may still be a valid very large allocation (over 64MiB))
+ftmalloc: warning: (yes, the previous pointer 0x20036c08780 was valid after all)
+ftmalloc: warning: ft_usable_size: pointer might not point to a valid heap region: 0x20036c08780
+(this may still be a valid very large allocation (over 64MiB))
+ftmalloc: warning: (yes, the previous pointer 0x20036c08780 was valid after all)
+[2022-04-12 14:38:22.634] [main] [info] 1649745502634ms start
+[2022-04-12 14:38:22.634] [predict_unit] [info] [0]------ block predict pc 0x40d71c, out pc start 0x40d71c end 0x40d720 ------
+[2022-04-12 14:38:22.634] [predict_unit] [info] [0] send a op[1] to ITLB, predicted pc = 0x40d71c
+[2022-04-12 14:38:22.634] [predict_unit] [info] [0] send a op[2] to push fetch queue, predicted pc = 0x40d71c
+[2022-04-12 14:38:22.636] [icache_l1] [info] [0] l1 cache op[6] response at pa 0x14de6471c, length 4
+[2022-04-12 14:38:22.634] [table_walker] [info] descaddr 6227873792, data 6227898371
+[2022-04-12 14:38:22.634] [table_walker] [info] descaddr 6227898368, data 6227902467
+[2022-04-12 14:38:22.634] [table_walker] [info] descaddr 6227902480, data 6227906563
+[2022-04-12 14:38:22.634] [table_walker] [info] descaddr 6227906664, data 9007204856647635
+[2022-04-12 14:38:22.634] [mmu_unit] [info] [4] translate op[1] done at va 0x40d71c, pa 0x14de6471c
+[2022-04-12 14:38:22.634] [fetch_unit] [info] [4] get a notice that fetch queue is not empty
+[2022-04-12 14:38:22.635] [predict_unit] [info] [4] push fetch queue succ, op[2]
+[2022-04-12 14:38:22.635] [predict_unit] [info] [4] send a op[5] to next cycle to predicted pc 0x40d720
+[2022-04-12 14:38:22.635] [predict_unit] [info] [4] translate return and send a op[6] to L1 cache, pa 0x14de6471c, size 4
+[2022-04-12 14:38:22.636] [icache_l1] [info] [4] l1 cache op[6] response at pa 0x14de6471c, length 4
+[2022-04-12 14:38:22.636] [predict_unit] [info] [5]------ block predict pc 0x40d720, out pc start 0x40d720 end 0x40d740 ------
+[2022-04-12 14:38:22.637] [fetch_unit] [info] [5] set PENDING because that IC Tags not ready, op [2], va 0x40d71c, size 4
+[2022-04-12 14:38:22.638] [predict_unit] [info] [5] send a op[8] to ITLB, predicted pc = 0x40d720
+[2022-04-12 14:38:22.638] [predict_unit] [info] [5] send a op[9] to push fetch queue, predicted pc = 0x40d720
+[2022-04-12 14:38:22.638] [icache_l1] [info] [8] l1 cache op[6] done at pa 0x14de6471c, length 4
+[2022-04-12 14:38:22.639] [predict_unit] [info] [8] L1 cache return and send a op[6] to L2 cache, pa 0x14de6471c, size 4
+[2022-04-12 14:38:22.639] [icache_l2] [info] [8] l2 cache op[11] done at pa 0x14de6471c, length 4
+[2022-04-12 14:38:22.640] [predict_unit] [info] [9] push fetch queue succ, op[9]
+[2022-04-12 14:38:22.640] [predict_unit] [info] [9] send a op[13] to next cycle to predicted pc 0x40d740
+[2022-04-12 14:38:22.640] [mmu_unit] [info] [9] translate op[8] done at va 0x40d720, pa 0x14de64720
+[2022-04-12 14:38:22.640] [predict_unit] [info] [9] translate return and send a op[14] to L1 cache, pa 0x14de64720, size 32
+[2022-04-12 14:38:22.641] [icache_l1] [info] [9] l1 cache op[14] response at pa 0x14de64720, length 32
+[2022-04-12 14:38:22.641] [predict_unit] [info] [10]------ block predict pc 0x40d740, out pc start 0x40d740 end 0x40d760 ------
+[2022-04-12 14:38:22.641] [predict_unit] [info] [10] send a op[16] to ITLB, predicted pc = 0x40d740
+[2022-04-12 14:38:22.641] [predict_unit] [info] [10] send a op[17] to push fetch queue, predicted pc = 0x40d740
+[2022-04-12 14:38:22.641] [icache_l2] [info] [12] l2 cache op[11] response at pa 0x14de6471c, length 4
+[2022-04-12 14:38:22.642] [fetch_unit] [info] [12] switch RUNNING because that IC Tags ready, op [2], va 0x40d71c, size 4
+[2022-04-12 14:38:22.643] [icache_l1] [info] [13] l1 cache op[14] done at pa 0x14de64720, length 32
+[2022-04-12 14:38:22.643] [fetch_unit] [info] [13] CacheLine Invalid (ICTAG: cache miss): send a op[21] to dram, pa 0x14de6471c, size 4, switch PENDING to wait dram return
+[2022-04-12 14:38:22.645] [predict_unit] [info] [13] L1 cache return and send a op[14] to L2 cache, pa 0x14de64720, size 32
+[2022-04-12 14:38:22.645] [dram_unit] [info] [13] op[21] get instuction at phyaddr = 0x14de64700
+[2022-04-12 14:38:22.645] [icache_l2] [info] [13] l2 cache op[22] done at pa 0x14de64720, length 32
+[2022-04-12 14:38:22.645] [predict_unit] [info] [14] push fetch queue succ, op[17]
+[2022-04-12 14:38:22.645] [predict_unit] [info] [14] send a op[25] to next cycle to predicted pc 0x40d760
+[2022-04-12 14:38:22.645] [mmu_unit] [info] [14] translate op[16] done at va 0x40d740, pa 0x14de64740
+[2022-04-12 14:38:22.646] [predict_unit] [info] [14] translate return and send a op[26] to L1 cache, pa 0x14de64740, size 32
+[2022-04-12 14:38:22.646] [icache_l1] [info] [14] l1 cache op[26] response at pa 0x14de64740, length 32
+[2022-04-12 14:38:22.646] [predict_unit] [info] [15]------ block predict pc 0x40d760, out pc start 0x40d760 end 0x40d780 ------
+[2022-04-12 14:38:22.646] [predict_unit] [info] [15] send a op[28] to ITLB, predicted pc = 0x40d760
+[2022-04-12 14:38:22.646] [predict_unit] [info] [15] send a op[29] to push fetch queue, predicted pc = 0x40d760
+[2022-04-12 14:38:22.646] [icache_l2] [info] [17] l2 cache op[22] response at pa 0x14de64720, length 32
+[2022-04-12 14:38:22.646] [icache_l1] [info] [18] l1 cache op[26] done at pa 0x14de64740, length 32
+[2022-04-12 14:38:22.646] [predict_unit] [info] [18] L1 cache return and send a op[26] to L2 cache, pa 0x14de64740, size 32
+[2022-04-12 14:38:22.646] [icache_l2] [info] [18] l2 cache op[31] done at pa 0x14de64740, length 32
+[2022-04-12 14:38:22.646] [mmu_unit] [info] [19] translate op[28] done at va 0x40d760, pa 0x14de64760
+[2022-04-12 14:38:22.646] [predict_unit] [info] [19] push fetch queue succ, op[29]
+[2022-04-12 14:38:22.646] [predict_unit] [info] [19] send a op[33] to next cycle to predicted pc 0x40d780
+[2022-04-12 14:38:22.646] [predict_unit] [info] [19] translate return and send a op[34] to L1 cache, pa 0x14de64760, size 32
+[2022-04-12 14:38:22.646] [icache_l1] [info] [19] l1 cache op[34] response at pa 0x14de64760, length 32
+[2022-04-12 14:38:22.646] [predict_unit] [info] [20]------ block predict pc 0x40d780, out pc start 0x40d780 end 0x40d7a0 ------
+[2022-04-12 14:38:22.646] [predict_unit] [info] [20] send a op[36] to ITLB, predicted pc = 0x40d780
+[2022-04-12 14:38:22.646] [predict_unit] [info] [20] send a op[37] to push fetch queue, predicted pc = 0x40d780
+[2022-04-12 14:38:22.646] [icache_l2] [info] [22] l2 cache op[31] response at pa 0x14de64740, length 32
+[2022-04-12 14:38:22.646] [icache_l1] [info] [23] l1 cache op[34] done at pa 0x14de64760, length 32
+[2022-04-12 14:38:22.646] [predict_unit] [info] [23] L1 cache return and send a op[34] to L2 cache, pa 0x14de64760, size 32
+[2022-04-12 14:38:22.646] [icache_l2] [info] [23] l2 cache op[39] done at pa 0x14de64760, length 32
+[2022-04-12 14:38:22.646] [predict_unit] [info] [24] push fetch queue succ, op[37]
+[2022-04-12 14:38:22.646] [mmu_unit] [info] [24] translate op[36] done at va 0x40d780, pa 0x14de64780
+[2022-04-12 14:38:22.646] [predict_unit] [info] [24] translate return and send a op[42] to L1 cache, pa 0x14de64780, size 32
+[2022-04-12 14:38:22.646] [predict_unit] [info] [24] send a op[41] to next cycle to predicted pc 0x40d7a0
+[2022-04-12 14:38:22.647] [icache_l1] [info] [24] l1 cache op[42] response at pa 0x14de64780, length 32
+[2022-04-12 14:38:22.647] [predict_unit] [info] [25]------ block predict pc 0x40d7a0, out pc start 0x40d7a0 end 0x40d7c0 ------
+[2022-04-12 14:38:22.647] [predict_unit] [info] [25] send a op[44] to ITLB, predicted pc = 0x40d7a0
+[2022-04-12 14:38:22.647] [predict_unit] [info] [25] send a op[45] to push fetch queue, predicted pc = 0x40d7a0
+[2022-04-12 14:38:22.647] [icache_l2] [info] [27] l2 cache op[39] response at pa 0x14de64760, length 32
+[2022-04-12 14:38:22.647] [icache_l1] [info] [28] l1 cache op[42] done at pa 0x14de64780, length 32
+[2022-04-12 14:38:22.647] [predict_unit] [info] [28] L1 cache return and send a op[42] to L2 cache, pa 0x14de64780, size 32
+[2022-04-12 14:38:22.647] [icache_l2] [info] [28] l2 cache op[47] done at pa 0x14de64780, length 32
+[2022-04-12 14:38:22.647] [predict_unit] [info] [29] push fetch queue succ, op[45]
+[2022-04-12 14:38:22.647] [predict_unit] [info] [29] send a op[49] to next cycle to predicted pc 0x40d7c0
+[2022-04-12 14:38:22.647] [mmu_unit] [info] [29] translate op[44] done at va 0x40d7a0, pa 0x14de647a0
+[2022-04-12 14:38:22.647] [predict_unit] [info] [29] translate return and send a op[50] to L1 cache, pa 0x14de647a0, size 32
+[2022-04-12 14:38:22.647] [icache_l1] [info] [29] l1 cache op[50] response at pa 0x14de647a0, length 32
+[2022-04-12 14:38:22.647] [predict_unit] [info] [30]------ block predict pc 0x40d7c0, out pc start 0x40d7c0 end 0x40d7e0 ------
+[2022-04-12 14:38:22.647] [predict_unit] [info] [30] send a op[52] to ITLB, predicted pc = 0x40d7c0
+[2022-04-12 14:38:22.647] [predict_unit] [info] [30] send a op[53] to push fetch queue, predicted pc = 0x40d7c0
+[2022-04-12 14:38:22.647] [icache_l2] [info] [32] l2 cache op[47] response at pa 0x14de64780, length 32
+[2022-04-12 14:38:22.647] [icache_l1] [info] [33] l1 cache op[50] done at pa 0x14de647a0, length 32
+[2022-04-12 14:38:22.647] [predict_unit] [info] [33] L1 cache return and send a op[50] to L2 cache, pa 0x14de647a0, size 32
+[2022-04-12 14:38:22.647] [icache_l2] [info] [33] l2 cache op[55] done at pa 0x14de647a0, length 32
+[2022-04-12 14:38:22.647] [mmu_unit] [info] [34] translate op[52] done at va 0x40d7c0, pa 0x14de647c0
+[2022-04-12 14:38:22.647] [predict_unit] [info] [34] translate return and send a op[57] to L1 cache, pa 0x14de647c0, size 32
+[2022-04-12 14:38:22.647] [predict_unit] [info] [34] push fetch queue succ, op[53]
+[2022-04-12 14:38:22.648] [predict_unit] [info] [34] send a op[58] to next cycle to predicted pc 0x40d7e0
+[2022-04-12 14:38:22.648] [icache_l1] [info] [34] l1 cache op[57] response at pa 0x14de647c0, length 32
+[2022-04-12 14:38:22.648] [predict_unit] [info] [35]------ block predict pc 0x40d7e0, out pc start 0x40d7e0 end 0x40d800 ------
+[2022-04-12 14:38:22.648] [predict_unit] [info] [35] send a op[60] to ITLB, predicted pc = 0x40d7e0
+[2022-04-12 14:38:22.648] [predict_unit] [info] [35] send a op[61] to push fetch queue, predicted pc = 0x40d7e0
+[2022-04-12 14:38:22.648] [icache_l2] [info] [37] l2 cache op[55] response at pa 0x14de647a0, length 32
+[2022-04-12 14:38:22.648] [icache_l1] [info] [38] l1 cache op[57] done at pa 0x14de647c0, length 32
+[2022-04-12 14:38:22.648] [predict_unit] [info] [38] L1 cache return and send a op[57] to L2 cache, pa 0x14de647c0, size 32
+[2022-04-12 14:38:22.648] [icache_l2] [info] [38] l2 cache op[63] done at pa 0x14de647c0, length 32
+[2022-04-12 14:38:22.648] [mmu_unit] [info] [39] translate op[60] done at va 0x40d7e0, pa 0x14de647e0
+[2022-04-12 14:38:22.648] [predict_unit] [info] [39] push fetch queue succ, op[61]
+[2022-04-12 14:38:22.648] [predict_unit] [info] [39] send a op[66] to next cycle to predicted pc 0x40d800
+[2022-04-12 14:38:22.648] [predict_unit] [info] [39] translate return and send a op[65] to L1 cache, pa 0x14de647e0, size 32
+[2022-04-12 14:38:22.649] [icache_l1] [info] [39] l1 cache op[65] response at pa 0x14de647e0, length 32
+[2022-04-12 14:38:22.649] [predict_unit] [info] [40]------ block predict pc 0x40d800, out pc start 0x40d800 end 0x40d820 ------
+[2022-04-12 14:38:22.649] [predict_unit] [info] [40] send a op[68] to ITLB, predicted pc = 0x40d800
+[2022-04-12 14:38:22.649] [predict_unit] [info] [40] send a op[69] to push fetch queue, predicted pc = 0x40d800
+[2022-04-12 14:38:22.649] [icache_l2] [info] [42] l2 cache op[63] response at pa 0x14de647c0, length 32
+[2022-04-12 14:38:22.649] [icache_l1] [info] [43] l1 cache op[65] done at pa 0x14de647e0, length 32
+[2022-04-12 14:38:22.649] [predict_unit] [info] [43] L1 cache return and send a op[65] to L2 cache, pa 0x14de647e0, size 32
+[2022-04-12 14:38:22.649] [icache_l2] [info] [43] l2 cache op[71] done at pa 0x14de647e0, length 32
+[2022-04-12 14:38:22.649] [mmu_unit] [info] [44] translate op[68] done at va 0x40d800, pa 0x14de64800
+[2022-04-12 14:38:22.649] [predict_unit] [info] [44] fetch queue full, switch to PENDING when push op[69]
+[2022-04-12 14:38:22.649] [predict_unit] [info] [44] translate return and send a op[73] to L1 cache, pa 0x14de64800, size 32
+[2022-04-12 14:38:22.649] [icache_l1] [info] [44] l1 cache op[73] response at pa 0x14de64800, length 32
+[2022-04-12 14:38:22.649] [icache_l2] [info] [47] l2 cache op[71] response at pa 0x14de647e0, length 32
+[2022-04-12 14:38:22.649] [icache_l1] [info] [48] l1 cache op[73] done at pa 0x14de64800, length 32
+[2022-04-12 14:38:22.649] [predict_unit] [info] [48] L1 cache return and send a op[73] to L2 cache, pa 0x14de64800, size 32
+[2022-04-12 14:38:22.649] [icache_l2] [info] [48] l2 cache op[75] done at pa 0x14de64800, length 32
+[2022-04-12 14:38:22.649] [icache_l2] [info] [52] l2 cache op[75] response at pa 0x14de64800, length 32
+[2022-04-12 14:38:22.649] [dram_unit] [info] [213] dram op[21] done at phyaddr = 0x14de64700, data 0xf9400d0d
+[2022-04-12 14:38:22.649] [fetch_unit] [info] [214] switch RUNNING as dram return at pa 0x14de6471c
+[2022-04-12 14:38:22.649] [decode_unit] [info] [214] get a notice that decode queue is not empty
+[2022-04-12 14:38:22.649] [fetch_unit] [info] [214] push decode queue succ, pushed count 1, op[79], inst pc 0x14de6471c
+[2022-04-12 14:38:22.649] [predict_unit] [info] [214] get a notice that fetch queue has empty slot
+[2022-04-12 14:38:22.649] [fetch_unit] [info] [214] get a notice that fetch queue is not empty
+[2022-04-12 14:38:22.649] [predict_unit] [info] [215]------ block predict pc 0x40d820, out pc start 0x40d820 end 0x40d840 ------
+[2022-04-12 14:38:22.649] [predict_unit] [info] [215] send a op[85] to ITLB, predicted pc = 0x40d820
+[2022-04-12 14:38:22.649] [decode_unit] [info] [215] send a op[84] to rename pipeline register, sn [1], mnemonic [cbz]
+[2022-04-12 14:38:22.649] [predict_unit] [info] [215] send a op[86] to push fetch queue, predicted pc = 0x40d820
+[2022-04-12 14:38:22.649] [decode_unit] [info] [215] inst data[0x340015ac]: cbz w12, #0x2b4
+[2022-04-12 14:38:22.650] [decode_unit] [info] [215] push pipeline_register_manager succ, pushed count 1, op[84]
+[2022-04-12 14:38:22.650] [decode_unit] [info] [215] get a notice that fetch queue is not empty
+[2022-04-12 14:38:22.650] [fetch_unit] [info] [215] push decode queue succ, pushed count 1, op[88], inst pc 0x14de64720
+[2022-04-12 14:38:22.650] [fetch_unit] [info] [215] push decode queue succ, pushed count 2, op[90], inst pc 0x14de64724
+[2022-04-12 14:38:22.650] [fetch_unit] [info] [215] push decode queue succ, pushed count 3, op[91], inst pc 0x14de64728
+[2022-04-12 14:38:22.650] [fetch_unit] [info] [215] decode queue full, switch to PENDING when push inst(pc 0x14de6472c) op[9], has pushed count 3
+[2022-04-12 14:38:22.650] [fetch_unit] [info] [215] decode queue has empty slot, switch to RUNNING at next cycle when push op[9]
+[2022-04-12 14:38:22.650] [fetch_unit] [info] [216] push decode queue succ, pushed count 1, op[95], inst pc 0x14de6472c
+[2022-04-12 14:38:22.650] [fetch_unit] [info] [216] decode queue full, switch to PENDING when push inst(pc 0x14de64730) op[9], has pushed count 1
+[2022-04-12 14:38:22.650] [rename_unit] [info] [218] rename try run by decode op [87]
+[2022-04-12 14:38:22.650] [rename_unit] [info] [218] Looking up IntRegClass arch reg 12, got phys reg 12 (IntRegClass)
+[2022-04-12 14:38:22.650] [rename_unit] [info] [218] Register 12 (flat: 12) (IntRegClass) is not ready
+[2022-04-12 14:38:22.650] [mmu_unit] [info] [219] translate op[85] done at va 0x40d820, pa 0x14de64820
+[2022-04-12 14:38:22.650] [predict_unit] [info] [219] translate return and send a op[96] to L1 cache, pa 0x14de64820, size 32
+[2022-04-12 14:38:22.650] [predict_unit] [info] [219] push fetch queue succ, op[86]
+[2022-04-12 14:38:22.650] [predict_unit] [info] [219] send a op[97] to next cycle to predicted pc 0x40d840
+[2022-04-12 14:38:22.650] [icache_l1] [info] [219] l1 cache op[96] response at pa 0x14de64820, length 32
+[2022-04-12 14:38:22.650] [predict_unit] [info] [220]------ block predict pc 0x40d840, out pc start 0x40d840 end 0x40d860 ------
+[2022-04-12 14:38:22.650] [predict_unit] [info] [220] send a op[99] to ITLB, predicted pc = 0x40d840
+[2022-04-12 14:38:22.650] [predict_unit] [info] [220] send a op[100] to push fetch queue, predicted pc = 0x40d840
+[2022-04-12 14:38:22.650] [icache_l1] [info] [223] l1 cache op[96] done at pa 0x14de64820, length 32
+[2022-04-12 14:38:22.650] [predict_unit] [info] [223] L1 cache return and send a op[96] to L2 cache, pa 0x14de64820, size 32
+[2022-04-12 14:38:22.650] [icache_l2] [info] [223] l2 cache op[102] done at pa 0x14de64820, length 32
+[2022-04-12 14:38:22.650] [predict_unit] [info] [224] fetch queue full, switch to PENDING when push op[100]
+[2022-04-12 14:38:22.650] [mmu_unit] [info] [224] translate op[99] done at va 0x40d840, pa 0x14de64840
+[2022-04-12 14:38:22.650] [predict_unit] [info] [224] translate return and send a op[104] to L1 cache, pa 0x14de64840, size 32
+[2022-04-12 14:38:22.650] [icache_l1] [info] [224] l1 cache op[104] response at pa 0x14de64840, length 32
+[2022-04-12 14:38:22.650] [icache_l2] [info] [227] l2 cache op[102] response at pa 0x14de64820, length 32
+[2022-04-12 14:38:22.650] [icache_l1] [info] [228] l1 cache op[104] done at pa 0x14de64840, length 32
+[2022-04-12 14:38:22.650] [predict_unit] [info] [228] L1 cache return and send a op[104] to L2 cache, pa 0x14de64840, size 32
+[2022-04-12 14:38:22.650] [icache_l2] [info] [228] l2 cache op[106] done at pa 0x14de64840, length 32
+[2022-04-12 14:38:22.650] [icache_l2] [info] [232] l2 cache op[106] response at pa 0x14de64840, length 32
+[2022-04-12 14:38:22.650] [icache_l2] [info] [232] l2 cache op[106] response at pa 0x14de64840, length 32
+[2022-04-12 14:38:22.650] [icache_l2] [info] [232] l2 cache op[106] response at pa 0x14de64840, length 32
+[2022-04-12 14:38:22.650] [icache_l2] [info] [232] l2 cache op[106] response at pa 0x14de64840, length 32
+[2022-04-12 14:38:22.650] [icache_l2] [info] [232] l2 cache op[106] response at pa 0x14de64840, length 32

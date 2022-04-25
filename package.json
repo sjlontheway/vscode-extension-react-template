@@ -10,22 +10,46 @@
 		"Other"
 	],
 	"activationEvents": [
-		"onCommand:vscode-microsim.helloWorld"
+		"onCommand:vscode-microsim.showMicroSim"
 	],
-	"main": "./dist/extension.js",
+	"main": "./dist/client/extension.js",
 	"contributes": {
 		"commands": [
 			{
-				"command": "vscode-microsim.helloWorld",
-				"title": "Hello World"
+				"command": "vscode-microsim.showMicroSim",
+				"title": "显示MicroSim"
+			},
+			{
+				"command": "vscode-microsim.resetMicrosimpath",
+				"title": "清除microsim默认文件位置"
 			}
-		]
+		],
+		"views": {
+			"panel-mircrosim": [
+				{
+					"type": "webview",
+					"id": "mircosim",
+					"name": "mircosim",
+					"when": "mircrosim.show"
+				}
+			]
+		},
+		"viewsContainers": {
+			"panel": [
+				{
+					"id": "panel-mircrosim",
+					"title": "mirco sim",
+					"icon": "$(clear-all)"
+				}
+			]
+		}
 	},
 	"scripts": {
 		"vscode:prepublish": "yarn run package",
 		"build:UI": "webpack --config ./webpack.ui.config.js",
 		"compile": "webpack ./webpack.config.js",
 		"watch": "webpack --watch",
+		"watch:UI": "webpack  --config ./webpack.ui.config.js --watch",
 		"package": "webpack --mode production --devtool hidden-source-map",
 		"compile-tests": "tsc -p . --outDir out",
 		"watch-tests": "tsc -p . -w --outDir out",
@@ -40,9 +64,12 @@
 		"@babel/preset-env": "^7.16.11",
 		"@babel/preset-react": "^7.16.7",
 		"@babel/preset-typescript": "^7.16.7",
+		"@babel/runtime": "^7.17.9",
 		"@types/glob": "^7.2.0",
+		"@types/lodash": "^4.14.182",
 		"@types/mocha": "^9.1.0",
 		"@types/node": "14.x",
+		"@types/offscreencanvas": "^2019.6.4",
 		"@types/react": "^18.0.3",
 		"@types/react-dom": "^18.0.0",
 		"@types/vscode": "^1.66.0",
@@ -66,6 +93,8 @@
 		"webpack-cli": "^4.9.2"
 	},
 	"dependencies": {
+		"antd": "^4.19.5",
+		"lodash": "^4.17.21",
 		"react": "^18.0.0",
 		"react-dom": "^18.0.0"
 	}

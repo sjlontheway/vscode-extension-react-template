@@ -14,11 +14,11 @@ const extensionUIConfig = {
     mode: 'development', // this leaves the source code as close as possible to the original (when packaging we set this to 'production')
     target: 'web', // vscode extensions run in a Node.js-context 📖 -> https://webpack.js.org/configuration/node/
     entry: {
-        debuggerUI: './src/debugger-ui/debugger-view/index.tsx',
+        index: './src/ui/index.tsx',
     }, // the entry point of this extension, 📖 -> https://webpack.js.org/configuration/entry-context/
     output: {
         // the bundle is stored in the 'dist' folder (check package.json), 📖 -> https://webpack.js.org/configuration/output/
-        path: path.resolve(path.dirname(__dirname), 'dist/debuggerUI'),
+        path: path.resolve(__dirname, 'dist/ui'),
         filename: '[name].js',
         libraryTarget: 'umd',
     },
@@ -37,6 +37,9 @@ const extensionUIConfig = {
         fallback: {
             path: require.resolve('path-browserify'),
         },
+        alias: {
+            process: "process/browser"
+        }
     },
     module: {
         rules: [
@@ -73,7 +76,7 @@ const extensionUIConfig = {
                     'less-loader',
                 ],
             },
-        ], 
+        ],
     },
     devtool: 'inline-source-map',
     infrastructureLogging: {

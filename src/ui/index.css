@@ -6,35 +6,11 @@ body,
     background-color: white;
     padding: 0px;
     margin: 0px;
-    overflow-x: hidden;
-}
-.layout-basic-demo .arco-layout-header,
-.layout-basic-demo .arco-layout-footer,
-.layout-basic-demo .arco-layout-sider,
-.layout-basic-demo .arco-layout-sider-children,
-.layout-basic-demo .arco-layout-content {
-    color: var(--color-white);
-    text-align: center;
-    font-stretch: condensed;
-    font-size: 16px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
 }
 
-.layout-basic-demo .arco-layout-header,
-.layout-basic-demo .arco-layout-footer {
-    height: 64px;
-    background-color: var(--color-primary-light-4);
-}
-
-.layout-basic-demo .arco-layout-sider {
-    width: 206px;
-    flex: 1;
-    background-color: var(--color-primary-light-3);
-}
-
-.layout-basic-demo .arco-layout-content {
-    flex: 1;
-    background-color: rgb(var(--arcoblue-6));
+.mircrosim-app {
+    display: "flex";
+    flex-direction: "row";
+    margin: 12px;
+    padding: 12px;
 }
