@@ -187,3 +187,4 @@ ftmalloc: warning: (yes, the previous pointer 0x20036c08780 was valid after all)
 [2022-04-12 14:38:22.650] [icache_l2] [info] [232] l2 cache op[106] response at pa 0x14de64840, length 32
 [2022-04-12 14:38:22.650] [icache_l2] [info] [232] l2 cache op[106] response at pa 0x14de64840, length 32
 [2022-04-12 14:38:22.650] [icache_l2] [info] [232] l2 cache op[106] response at pa 0x14de64840, length 32
+[2022-04-12 14:38:22.642] [fetch_unit] [info] [12] switch RUNNING because that IC Tags ready, op [2], va 0x40d71c, size 4

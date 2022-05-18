@@ -1,101 +1,121 @@
 {
-	"name": "vscode-microsim",
-	"displayName": "vscode-microsim",
-	"description": "visualization of microsim log",
-	"version": "0.0.1",
-	"engines": {
-		"vscode": "^1.66.0"
-	},
-	"categories": [
-		"Other"
-	],
-	"activationEvents": [
-		"onCommand:vscode-microsim.showMicroSim"
-	],
-	"main": "./dist/client/extension.js",
-	"contributes": {
-		"commands": [
-			{
-				"command": "vscode-microsim.showMicroSim",
-				"title": "显示MicroSim"
-			},
-			{
-				"command": "vscode-microsim.resetMicrosimpath",
-				"title": "清除microsim默认文件位置"
-			}
-		],
-		"views": {
-			"panel-mircrosim": [
-				{
-					"type": "webview",
-					"id": "mircosim",
-					"name": "mircosim",
-					"when": "mircrosim.show"
-				}
-			]
-		},
-		"viewsContainers": {
-			"panel": [
-				{
-					"id": "panel-mircrosim",
-					"title": "mirco sim",
-					"icon": "$(clear-all)"
-				}
-			]
-		}
-	},
-	"scripts": {
-		"vscode:prepublish": "yarn run package",
-		"build:UI": "webpack --config ./webpack.ui.config.js",
-		"compile": "webpack ./webpack.config.js",
-		"watch": "webpack --watch",
-		"watch:UI": "webpack  --config ./webpack.ui.config.js --watch",
-		"package": "webpack --mode production --devtool hidden-source-map",
-		"compile-tests": "tsc -p . --outDir out",
-		"watch-tests": "tsc -p . -w --outDir out",
-		"pretest": "yarn run compile-tests && yarn run compile && yarn run lint",
-		"lint": "eslint src --ext ts",
-		"test": "node ./out/test/runTest.js"
-	},
-	"devDependencies": {
-		"@babel/core": "^7.17.9",
-		"@babel/plugin-proposal-object-rest-spread": "^7.17.3",
-		"@babel/plugin-transform-runtime": "^7.17.0",
-		"@babel/preset-env": "^7.16.11",
-		"@babel/preset-react": "^7.16.7",
-		"@babel/preset-typescript": "^7.16.7",
-		"@babel/runtime": "^7.17.9",
-		"@types/glob": "^7.2.0",
-		"@types/lodash": "^4.14.182",
-		"@types/mocha": "^9.1.0",
-		"@types/node": "14.x",
-		"@types/offscreencanvas": "^2019.6.4",
-		"@types/react": "^18.0.3",
-		"@types/react-dom": "^18.0.0",
-		"@types/vscode": "^1.66.0",
-		"@typescript-eslint/eslint-plugin": "^5.16.0",
-		"@typescript-eslint/parser": "^5.16.0",
-		"@vscode/test-electron": "^2.1.3",
-		"babel-loader": "^8.2.4",
-		"clean-webpack-plugin": "^4.0.0",
-		"css-loader": "^6.7.1",
-		"eslint": "^8.11.0",
-		"eslint-plugin-react-hooks": "^4.4.0",
-		"glob": "^7.2.0",
-		"html-webpack-plugin": "^5.5.0",
-		"mocha": "^9.2.2",
-		"path-browserify": "^1.0.1",
-		"style-loader": "^3.3.1",
-		"ts-loader": "^9.2.8",
-		"tsconfig-paths-webpack-plugin": "^3.5.2",
-		"typescript": "^4.5.5",
-		"webpack": "^5.70.0",
-		"webpack-cli": "^4.9.2"
-	},
-	"dependencies": {
-		"antd": "^4.19.5",
-		"lodash": "^4.17.21",
-		"react": "^18.0.0",
-		"react-dom": "^18.0.0"
-	}
+  "name": "vscode-microsim",
+  "displayName": "vscode-microsim",
+  "description": "visualization of microsim log",
+  "version": "0.0.3",
+  "engines": {
+    "vscode": "^1.65.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onCommand:vscode-microsim.showMicroSim"
+  ],
+  "main": "./dist/client/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "vscode-microsim.showMicroSim",
+        "title": "显示MicroSim"
+      },
+      {
+        "command": "vscode-microsim.resetMicrosimpath",
+        "title": "清除microsim默认文件位置"
+      }
+    ],
+    "configuration": {
+      "title": "MicroSim",
+      "properties": {
+        "microSim.units": {
+          "type": "array",
+          "default": [],
+          "scope": "user",
+          "description": "显示的microsim 工作单元"
+        },
+        "microSim.logPath": {
+          "type": "string",
+          "default": "microsim.log",
+          "scope": "user",
+          "description": "micro sim 日志路径"
+        }
+      }
+    },
+    "views": {
+      "panel-mircrosim": [
+        {
+          "type": "webview",
+          "id": "mircosim",
+          "name": "mircosim",
+          "when": "mircrosim.show"
+        }
+      ]
+    },
+    "viewsContainers": {
+      "panel": [
+        {
+          "id": "panel-mircrosim",
+          "title": "mirco sim",
+          "icon": "$(clear-all)"
+        }
+      ]
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "yarn run package",
+    "build:UI": "webpack --config ./webpack.ui.config.js",
+    "compile": "webpack ./webpack.config.js",
+    "watch": "webpack --watch",
+    "pack":"vsce package",
+    "watch:UI": "webpack  --config ./webpack.ui.config.js --watch",
+    "package": "webpack --mode production --devtool hidden-source-map",
+    "compile-tests": "tsc -p . --outDir out",
+    "watch-tests": "tsc -p . -w --outDir out",
+    "pretest": "yarn run compile-tests && yarn run compile && yarn run lint",
+    "lint": "eslint src --ext ts",
+    "test": "node ./out/test/runTest.js"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.17.9",
+    "@babel/plugin-proposal-object-rest-spread": "^7.17.3",
+    "@babel/plugin-transform-runtime": "^7.17.0",
+    "@babel/preset-env": "^7.16.11",
+    "@babel/preset-react": "^7.16.7",
+    "@babel/preset-typescript": "^7.16.7",
+    "@babel/runtime": "^7.17.9",
+    "@types/glob": "^7.2.0",
+    "@types/lodash": "^4.14.182",
+    "@types/mocha": "^9.1.0",
+    "@types/node": "14.x",
+    "@types/offscreencanvas": "^2019.6.4",
+    "@types/react": "^18.0.3",
+    "@types/react-dom": "^18.0.0",
+    "@types/react-window": "^1.8.5",
+    "@types/vscode": "^1.65.0",
+    "@typescript-eslint/eslint-plugin": "^5.16.0",
+    "@typescript-eslint/parser": "^5.16.0",
+    "@vscode/test-electron": "^2.1.3",
+    "babel-loader": "^8.2.4",
+    "clean-webpack-plugin": "^4.0.0",
+    "css-loader": "^6.7.1",
+    "eslint": "^8.11.0",
+    "eslint-plugin-react-hooks": "^4.4.0",
+    "glob": "^7.2.0",
+    "html-webpack-plugin": "^5.5.0",
+    "mocha": "^9.2.2",
+    "path-browserify": "^1.0.1",
+    "style-loader": "^3.3.1",
+    "ts-loader": "^9.2.8",
+    "tsconfig-paths-webpack-plugin": "^3.5.2",
+    "typescript": "^4.5.5",
+    "webpack": "^5.70.0",
+    "webpack-cli": "^4.9.2"
+  },
+  "dependencies": {
+    "antd": "^4.19.5",
+    "lodash": "^4.17.21",
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0",
+    "react-window": "^1.8.7"
+  }
 }

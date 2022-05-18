@@ -71,8 +71,8 @@ export default class MicroSimProvider
     this.webHostView = new WebviewHost(webHostOptions, this.ctx.subscriptions);
   }
 
-  public sendUpdateMessage(message: any) {
-    console.log("send messgae:", this.webHostView);
-    this.webHostView?.postMessage({ type: "fileContent", payload: message });
+  public sendUpdateMessage(message: { type: string; payload: any }) {
+    console.log("send messgae:", message);
+    this.webHostView?.postMessage(message);
   }
 }
